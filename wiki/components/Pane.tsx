@@ -1,11 +1,11 @@
-import { Pressable, StyleProp, ViewStyle } from "react-native";
+import { Pressable, StyleProp, View, ViewStyle } from "react-native";
 import { useTheme } from "../ThemeProvider";
 
 /* Pane with bevelled edges. */
 export const Pane: React.FC<{ children?: React.ReactNode; style?: StyleProp<ViewStyle> }> = ({ children, style }) => {
   const { colors } = useTheme();
   return (
-    <Pressable
+    <View
       style={[
         {
           backgroundColor: colors.pane,
@@ -23,6 +23,6 @@ export const Pane: React.FC<{ children?: React.ReactNode; style?: StyleProp<View
       ]}
     >
       {children}
-    </Pressable>
+    </View>
   );
 };
