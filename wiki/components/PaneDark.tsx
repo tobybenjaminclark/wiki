@@ -1,8 +1,8 @@
-import { Pressable, StyleProp, View, ViewStyle } from "react-native";
+import { StyleProp, View, ViewStyle } from "react-native";
 import { useTheme } from "../ThemeProvider";
 
 /* Pane with bevelled edges. */
-export const Pane: React.FC<{ children?: React.ReactNode; style?: StyleProp<ViewStyle> }> = ({ children, style }) => {
+export const PaneDark: React.FC<{ children?: React.ReactNode; style?: StyleProp<ViewStyle> }> = ({ children, style }) => {
   const { colors } = useTheme();
   return (
     <View

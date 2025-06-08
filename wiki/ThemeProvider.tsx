@@ -1,58 +1,70 @@
-/* Save this file as ThemeProvider.tsx so the TypeScript compiler recognises the JSX below. */
-
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { Platform, Pressable, StyleProp, ViewStyle } from "react-native";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { Platform } from "react-native";
 
 /* Theme identifiers. */
 export type ThemeName = "green" | "blue";
 
-/* Colour values for a pane. */
+/* Colour values for dark and light panes. */
 export interface ColourScheme {
-  pane: string; /* Main background colour. */
-  paneBorderLight: string; /* Highlight colour on top‑left edges. */
-  paneBorderDark: string; /* Shadow colour on bottom‑right edges. */
+  pane: string; /* Background colour of a normal pane. */
+  paneBorderLight: string; /* Highlight on top‑left edges. */
+  paneBorderDark: string; /* Shadow on bottom‑right edges. */
   text: string; /* Default text colour. */
+
+  paneLight: string; /* Background colour of a light pane. */
+  paneLightBorderLight: string; /* Highlight on top‑left edges (light pane). */
+  paneLightBorderDark: string; /* Shadow on bottom‑right edges (light pane). */
+  paneLightText: string; /* Text colour inside a light pane. */
 }
 
-/* Palettes keyed by theme name. */
 const palettes: Record<ThemeName, ColourScheme> = {
   green: {
     pane: "#9DCBBA",
     paneBorderLight: "#C3E5D8",
     paneBorderDark: "#6AA28D",
     text: "#1E1E1E",
+
+    paneLight: "#C8EEE0",
+    paneLightBorderLight: "#E1FEF3",
+    paneLightBorderDark: "#9EC9BB",
+    paneLightText: "#4C5F58",
   },
   blue: {
     pane: "#9DC5E4",
     paneBorderLight: "#C2E1FF",
     paneBorderDark: "#5A9AC1",
     text: "#1E1E1E",
+
+    paneLight: "#C8EEE0",
+    paneLightBorderLight: "#E1FEF3",
+    paneLightBorderDark: "#9EC9BB",
+    paneLightText: "#4C5F58",
   },
 };
 
-/* Context value. */
+/* Theme context. */
 interface ThemeContextValue {
-  name: ThemeName;        /* Active theme name. */
-  colors: ColourScheme;   /* Active colour set. */
-  toggle: () => void;     /* Switch between themes. */
+  name: ThemeName; /* Current theme name. */
+  colors: ColourScheme; /* Active colour set. */
+  toggle: () => void; /* Switch between themes. */
 }
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
-/* Provide theme to the component tree. */
+/* Provider component. */
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [name, setName] = useState<ThemeName>("green");
 
   const toggle = () => setName(prev => (prev === "green" ? "blue" : "green"));
 
-  /* Toggle on 'p' key‑press (web only). */
+  /* Press 'p' on web to toggle the palette. */
   useEffect(() => {
     if (Platform.OS !== "web") return;
-    const handleKey = (e: KeyboardEvent) => {
+    const handle = (e: KeyboardEvent) => {
       if (e.key.toLowerCase() === "p") toggle();
     };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
+    window.addEventListener("keydown", handle);
+    return () => window.removeEventListener("keydown", handle);
   }, []);
 
   const value: ThemeContextValue = { name, colors: palettes[name], toggle };
@@ -61,9 +73,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 };
 
 /* Hook to access theme context. */
-export const useTheme = (): ThemeContextValue => {
+export const useTheme = () => {
   const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be inside ThemeProvider.");
+  if (!ctx) throw new Error("useTheme must be used inside a ThemeProvider.");
   return ctx;
 };
-
