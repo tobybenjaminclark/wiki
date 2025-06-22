@@ -1,105 +1,186 @@
-import React, { JSX } from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, Text } from "react-native";
-import { ThemeProvider, useTheme } from "../ThemeProvider";
-import { PaneDark } from "../components/PaneDark";
-import { ButtonLight } from "../components/ButtonLight";
-import { INTRO_TEXT } from "../content/intro";
+import { useRouter } from 'expo-router'
+import { Dimensions, Image, View } from 'react-native'
+import ThemedButton from '../assets/components/Button'
+import ChangaText from '../assets/components/ChangaText'
+import Pane from '../assets/components/Pane'
+import Separator from '../assets/components/Separator'
+import { useTheme } from '../assets/themes/ThemeContext'
+import { darkTheme, lightTheme } from '../assets/themes/themes'
 
-/* Shared width so every bevel aligns. */
-const PANE_WIDTH = 500;
+export default function Index() {
+  const { theme } = useTheme()
+  const colors = theme === 'light' ? lightTheme : darkTheme
+  const router = useRouter()
+  const screenHeight = Dimensions.get('window').height
 
-export default function App(): JSX.Element {
-  return (
-    <ThemeProvider>
-      <RootScreen />
-    </ThemeProvider>
-  );
-}
+  const paneWidth = 600
+  const paneHeight = 65
+  const paneSpacing = 10 // space between panes
 
-function RootScreen(): JSX.Element {
-  const { colors } = useTheme();
-
-  /* full‑width light button (minus dark pane padding). */
-  const fullButtonStyle = { width: "100%" } as const;
-
-  /* half‑width buddies that butt up to each other. */
-  const halfButtonStyle = { flex: 1 } as const;
+  // Size for side panes (adjust as you want)
+  const sidePaneWidth = 275
+  const sidePaneHeight = 60
+  const sidePaneSpacing = 20
+  const sideGroupHeight = -300
 
   return (
-    <View style={styles.container}>
-      {/* Name header */}
-      <PaneDark style={styles.headerPane}>
-        <Text style={[styles.headerText, { color: colors.text }]}>Toby Benjamin Clark</Text>
-      </PaneDark>
+    <View style={{ flex: 1 }}>
+      {/* Center panes */}
+      <View
+        style={{
+          position: 'absolute',
+          top: screenHeight / 3 - paneHeight / 2,
+          left: '50%',
+          transform: [{ translateX: -paneWidth / 2 }],
+        }}
+      >
+        <Pane
+          preset="green"
+          style={{
+            width: paneWidth,
+            height: paneHeight,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <ChangaText type="title">Toby Benjamin Clark</ChangaText>
+        </Pane>
+      </View>
 
-      {/* Blurb + buttons in one dark pane */}
-      <PaneDark style={styles.bodyPane}>
-        <Text style={[styles.bodyText, { color: colors.text }]}>{INTRO_TEXT}</Text>
+      <View
+        style={{
+          position: 'absolute',
+          top: screenHeight / 3 - paneHeight / 2 + paneHeight + paneSpacing,
+          left: '50%',
+          transform: [{ translateX: -paneWidth / 2 }],
+        }}
+      >
+        <Pane preset="green" style={{ width: paneWidth, justifyContent: 'center', alignItems: 'center' }}>
+          <ChangaText type="paragraph">
+            Tavernstalk offers the user a distinct choice instead of simply assuming the user wants to remain safe. Tweaking the parameters allows the
+            algorithm to suggest dangerous routes, leading long walks through high crime areas to shady pubs and taverns - aptly named the Warriors Walk.
+            {'\n\n'}
+            However (and more usefully) we also generate the safest pub crawls based on data obtained via the Police API (yes this exists), named "The Peacekeepers Path".
+            Blah Blah Blah blah blah blah blah blah blah blah blah.
+            {'\n\n'}
+            Anyways, named "The Peacekeepers Path". Blah Blah Blah blah blah blah blah blah blah blah blah.
+          </ChangaText>
+          <ThemedButton preset = "lightBlue" style={{ marginTop: 20, width: 550 }} title="Projects & Hackathons" onPress={() => router.push('/projects')} />
+          <ThemedButton preset = "lightBlue" style={{ marginTop: 10, width: 550 }} title="Academic Endeavours" />
+          <Separator style={{ marginVertical: 20 }} />
 
-        {/* primary buttons */}
-        <View style={styles.vGap} />
-        <ButtonLight title="Projects & Hackathons" style={fullButtonStyle} />
-        <View style={styles.vGapSmall} />
-        <ButtonLight title="Academic Endeavours" style={fullButtonStyle} />
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="Github Profile" />
+            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="Linkedin Profile" />
+          </View>
 
-        {/* separator line */}
-        <View style={[styles.separator, { backgroundColor: colors.paneBorderDark }]} />
+          <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
+            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="CV File" />
+            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="Contact Me" />
+          </View>
+        </Pane>
+      </View>
 
-        {/* secondary buttons rows */}
-        <View style={styles.row}>
-          <ButtonLight title="Github Profile" style={halfButtonStyle} />
-          <ButtonLight title="LinkedIn Profile" style={halfButtonStyle} />
+      {/* Left group of panes */}
+      <View
+        style={{
+          position: 'absolute',
+          top: screenHeight / 3 - sideGroupHeight  / 2,
+          left: '50%',
+          transform: [{ translateX: -paneWidth / 2 - 413 - sidePaneSpacing }],
+          width: sidePaneWidth * 2 + sidePaneSpacing,
+        }}
+      >
+        {/* Top row: two panes side by side */}
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+          <View style={{ height: 289, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="red" style={{ width: 154, height: 154, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/writings.png')} style={{ width: 140, height: 140, resizeMode: 'contain' }} />
+            </Pane>
+            <ThemedButton preset="red" title="Writings" style={{ width: 154 }} />
+          </View>
+          <View style={{ marginLeft: 20, height: 289, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="yellow" style={{ width: 239, height: 239, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/paintings.png')} style={{ width: 218, height: 218, resizeMode: 'contain' }} />
+            </Pane>
+            <ThemedButton preset="yellow" title="Paintings" style={{ width: 239 }} />
+          </View>
         </View>
-        <View style={styles.row}>
-          <ButtonLight title="CV File" style={halfButtonStyle} />
-          <ButtonLight title="Contact Me" style={halfButtonStyle} />
-        </View>
-      </PaneDark>
 
-      <StatusBar style="auto" />
+        {/* Bottom pane spanning both */}
+        <Pane
+          preset="green"
+          style={{
+            width: 411,
+            height: 140,
+            marginTop: 10,
+            paddingVertical: 10,
+            justifyContent: 'space-between',
+          }}
+        >
+          <ChangaText type="paragraph">
+            Painting or something?
+          </ChangaText>
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 185 }} title="Writings" />
+            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 185 }} title="Gallery" />
+          </View>
+        </Pane>
+
+      </View>
+
+      {/* Right group of panes */}
+      <View
+        style={{
+          position: 'absolute',
+          top: screenHeight / 3 - sideGroupHeight  / 2,
+          left: '50%',
+          transform: [{ translateX: paneWidth / 2 + sidePaneSpacing }],
+          width: sidePaneWidth * 2 + sidePaneSpacing,
+        }}
+      >
+        {/* Top row: two panes side by side */}
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+          <View style={{ height: 289, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="blue" style={{ width: 239, height: 239, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/toby.png')} style={{ width: 218, height: 218, resizeMode: 'contain' }} />
+            </Pane>
+            <ThemedButton preset="blue" title="Toby (me)" style={{ width: 239 }} />
+          </View>
+          <View style={{ marginLeft: 20, height: 154, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="pink" style={{ width: 154, height: 154, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/amber.png')} style={{ width: 140, height: 140, resizeMode: 'contain' }} />
+            </Pane>
+            <ThemedButton preset="pink" title="Amber" style={{ width: 154 }} />
+          </View>
+        </View>
+
+
+        <Pane
+          preset="green"
+          style={{
+            width: 411,
+            height: 140,
+            marginTop: 10,
+            paddingVertical: 10,
+            justifyContent: 'space-between',
+          }}
+        >
+          <ChangaText type="paragraph">
+            Amber or something
+          </ChangaText>
+
+          <View style={{ alignItems: 'center' }}>
+            <ThemedButton
+              preset="lightBlue"
+              style={{ width: 375 }}
+              title="Check out Amber's Wiki"
+            />
+          </View>
+        </Pane>
+
+
+      </View>
     </View>
-  );
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-start",
-    paddingTop: 32,
-    backgroundColor: "#fff",
-  },
-  headerPane: {
-    width: PANE_WIDTH,
-    marginBottom: 16,
-  },
-  bodyPane: {
-    width: PANE_WIDTH,
-    padding: 16,
-  },
-  headerText: {
-    fontSize: 28,
-    fontWeight: "700",
-    textAlign: "center",
-    textDecorationLine: "underline",
-  },
-  bodyText: {
-    fontSize: 16,
-    lineHeight: 22,
-    marginBottom: 4,
-  },
-  vGap: { height: 16 },
-  vGapSmall: { height: 12 },
-  separator: {
-    height: 2,
-    alignSelf: "stretch",
-    marginVertical: 16,
-  },
-  row: {
-    flexDirection: "row",
-    marginTop: 12,
-    width: "100%"
-  },
-  hGap: { width: 8 },
-});
