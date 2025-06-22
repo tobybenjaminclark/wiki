@@ -1,5 +1,5 @@
 import { useRouter } from 'expo-router'
-import { Dimensions, Image, View } from 'react-native'
+import { Image, useWindowDimensions, View } from 'react-native'
 import ThemedButton from '../assets/components/Button'
 import ChangaText from '../assets/components/ChangaText'
 import Pane from '../assets/components/Pane'
@@ -11,7 +11,8 @@ export default function Index() {
   const { theme } = useTheme()
   const colors = theme === 'light' ? lightTheme : darkTheme
   const router = useRouter()
-  const screenHeight = Dimensions.get('window').height
+  const { height: screenHeight } = useWindowDimensions()
+
 
   const paneWidth = 600
   const paneHeight = 65
