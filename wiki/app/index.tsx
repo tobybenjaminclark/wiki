@@ -11,18 +11,27 @@ export default function Index() {
   const { theme } = useTheme()
   const colors = theme === 'light' ? lightTheme : darkTheme
   const router = useRouter()
-  const { height: screenHeight } = useWindowDimensions()
+  const { height: screenHeight, width: screenWidth } = useWindowDimensions()
 
+  // Central Pane Sizes
+  const paneWidth = screenWidth * 0.25
+  const paneHeight = screenHeight * 0.06
+  const paneSpacing = screenWidth * 0.005
 
-  const paneWidth = 600
-  const paneHeight = 65
-  const paneSpacing = 10 // space between panes
-
-  // Size for side panes (adjust as you want)
-  const sidePaneWidth = 275
-  const sidePaneHeight = 60
-  const sidePaneSpacing = 20
-  const sideGroupHeight = -300
+  // Side Panes Sizes
+  const sidePaneWidth = screenWidth * 0.1
+  const sidePaneSpacing = screenWidth * 0.01
+  const sideGroupHeight = -(screenHeight * 0.2)
+  const smallIconPane = screenWidth * 0.06
+  const largeIconPane = screenWidth * 0.09
+  const bottomPaneWidth = screenWidth * 0.16
+  const bottomPaneHeight = screenHeight * 0.12
+  const iconSizeSmall = screenWidth * 0.055
+  const iconSizeLarge = screenWidth * 0.085
+  const doubleButtonWidth = screenWidth * 0.075
+  const wikiButtonWidth = screenWidth * 0.15
+  const buttonRowWidth = screenWidth * 0.11
+  const contentButtonWidth = screenWidth * 0.22
 
   return (
     <View style={{ flex: 1 }}>
@@ -58,7 +67,7 @@ export default function Index() {
       >
         <Pane preset="green" style={{ width: paneWidth, justifyContent: 'center', alignItems: 'center' }}>
           <ChangaText type="paragraph">
-            Tavernstalk offers the user a distinct choice instead of simply assuming the user wants to remain safe. Tweaking the parameters allows the
+              Tavernstalk offers the user a distinct choice instead of simply assuming the user wants to remain safe. Tweaking the parameters allows the
             algorithm to suggest dangerous routes, leading long walks through high crime areas to shady pubs and taverns - aptly named the Warriors Walk.
             {'\n\n'}
             However (and more usefully) we also generate the safest pub crawls based on data obtained via the Police API (yes this exists), named "The Peacekeepers Path".
@@ -66,18 +75,16 @@ export default function Index() {
             {'\n\n'}
             Anyways, named "The Peacekeepers Path". Blah Blah Blah blah blah blah blah blah blah blah blah.
           </ChangaText>
-          <ThemedButton preset = "lightBlue" style={{ marginTop: 20, width: 550 }} title="Projects & Hackathons" onPress={() => router.push('/projects')} />
-          <ThemedButton preset = "lightBlue" style={{ marginTop: 10, width: 550 }} title="Academic Endeavours" />
-          <Separator style={{ marginVertical: 20 }} />
-
+          <ThemedButton preset="lightBlue" style={{ marginTop: sidePaneSpacing, width: contentButtonWidth }} title="Projects & Hackathons" onPress={() => router.push('/projects')} />
+          <ThemedButton preset="lightBlue" style={{ marginTop: sidePaneSpacing, width: contentButtonWidth }} title="Academic Endeavours" />
+          <Separator style={{ marginVertical: sidePaneSpacing }} />
           <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="Github Profile" />
-            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="Linkedin Profile" />
+            <ThemedButton preset="lightBlue" style={{ flex: 1, width: buttonRowWidth }} title="Github Profile" />
+            <ThemedButton preset="lightBlue" style={{ flex: 1, width: buttonRowWidth }} title="Linkedin Profile" />
           </View>
-
-          <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
-            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="CV File" />
-            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 275 }} title="Contact Me" />
+          <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: paneSpacing }}>
+            <ThemedButton preset="lightBlue" style={{ flex: 1, width: buttonRowWidth }} title="CV File" />
+            <ThemedButton preset="lightBlue" style={{ flex: 1, width: buttonRowWidth }} title="Contact Me" />
           </View>
         </Pane>
       </View>
@@ -86,101 +93,89 @@ export default function Index() {
       <View
         style={{
           position: 'absolute',
-          top: screenHeight / 3 - sideGroupHeight  / 2,
+          top: screenHeight / 3 - sideGroupHeight / 2,
           left: '50%',
-          transform: [{ translateX: -paneWidth / 2 - 413 - sidePaneSpacing }],
+          transform: [{ translateX: -paneWidth / 2 - (screenWidth * 0.17) - sidePaneSpacing }],
           width: sidePaneWidth * 2 + sidePaneSpacing,
         }}
       >
-        {/* Top row: two panes side by side */}
         <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-          <View style={{ height: 289, justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Pane preset="red" style={{ width: 154, height: 154, justifyContent: 'center', alignItems: 'center' }}>
-              <Image source={require('../assets/images/menu/writings.png')} style={{ width: 140, height: 140, resizeMode: 'contain' }} />
+          <View style={{ height: screenHeight * 0.25, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="red" style={{ width: smallIconPane, height: smallIconPane, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/writings.png')} style={{ width: iconSizeSmall, height: iconSizeSmall, resizeMode: 'contain' }} />
             </Pane>
-            <ThemedButton preset="red" title="Writings" style={{ width: 154 }} />
+            <ThemedButton preset="red" title="Writings" style={{ width: smallIconPane }} />
           </View>
-          <View style={{ marginLeft: 20, height: 289, justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Pane preset="yellow" style={{ width: 239, height: 239, justifyContent: 'center', alignItems: 'center' }}>
-              <Image source={require('../assets/images/menu/paintings.png')} style={{ width: 218, height: 218, resizeMode: 'contain' }} />
+          <View style={{ marginLeft: sidePaneSpacing, height: screenHeight * 0.25, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="yellow" style={{ width: largeIconPane, height: largeIconPane, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/paintings.png')} style={{ width: iconSizeLarge, height: iconSizeLarge, resizeMode: 'contain' }} />
             </Pane>
-            <ThemedButton preset="yellow" title="Paintings" style={{ width: 239 }} />
+            <ThemedButton preset="yellow" title="Paintings" style={{ width: largeIconPane }} />
           </View>
         </View>
 
-        {/* Bottom pane spanning both */}
         <Pane
           preset="green"
           style={{
-            width: 411,
-            height: 140,
-            marginTop: 10,
-            paddingVertical: 10,
+            width: bottomPaneWidth,
+            height: bottomPaneHeight,
+            marginTop: paneSpacing,
+            paddingVertical: paneSpacing,
             justifyContent: 'space-between',
           }}
         >
-          <ChangaText type="paragraph">
-            Painting or something?
-          </ChangaText>
+          <ChangaText type="paragraph">Painting or something?</ChangaText>
           <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 185 }} title="Writings" />
-            <ThemedButton preset = "lightBlue" style={{ flex: 1, width: 185 }} title="Gallery" />
+            <ThemedButton preset="lightBlue" style={{ flex: 1, width: doubleButtonWidth }} title="Writings" />
+            <ThemedButton preset="lightBlue" style={{ flex: 1, width: doubleButtonWidth }} title="Gallery" />
           </View>
         </Pane>
-
       </View>
 
       {/* Right group of panes */}
       <View
         style={{
           position: 'absolute',
-          top: screenHeight / 3 - sideGroupHeight  / 2,
+          top: screenHeight / 3 - sideGroupHeight / 2,
           left: '50%',
           transform: [{ translateX: paneWidth / 2 + sidePaneSpacing }],
           width: sidePaneWidth * 2 + sidePaneSpacing,
         }}
       >
-        {/* Top row: two panes side by side */}
         <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-          <View style={{ height: 289, justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Pane preset="blue" style={{ width: 239, height: 239, justifyContent: 'center', alignItems: 'center' }}>
-              <Image source={require('../assets/images/menu/toby.png')} style={{ width: 218, height: 218, resizeMode: 'contain' }} />
+          <View style={{ height: screenHeight * 0.25, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="blue" style={{ width: largeIconPane, height: largeIconPane, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/toby.png')} style={{ width: iconSizeLarge, height: iconSizeLarge, resizeMode: 'contain' }} />
             </Pane>
-            <ThemedButton preset="blue" title="Toby (me)" style={{ width: 239 }} />
+            <ThemedButton preset="blue" title="Toby (me)" style={{ width: largeIconPane }} />
           </View>
-          <View style={{ marginLeft: 20, height: 154, justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Pane preset="pink" style={{ width: 154, height: 154, justifyContent: 'center', alignItems: 'center' }}>
-              <Image source={require('../assets/images/menu/amber.png')} style={{ width: 140, height: 140, resizeMode: 'contain' }} />
+          <View style={{ marginLeft: sidePaneSpacing, height: smallIconPane, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Pane preset="pink" style={{ width: smallIconPane, height: smallIconPane, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../assets/images/menu/amber.png')} style={{ width: iconSizeSmall, height: iconSizeSmall, resizeMode: 'contain' }} />
             </Pane>
-            <ThemedButton preset="pink" title="Amber" style={{ width: 154 }} />
+            <ThemedButton preset="pink" title="Amber" style={{ width: smallIconPane }} />
           </View>
         </View>
-
 
         <Pane
           preset="green"
           style={{
-            width: 411,
-            height: 140,
-            marginTop: 10,
-            paddingVertical: 10,
+            width: bottomPaneWidth,
+            height: bottomPaneHeight,
+            marginTop: paneSpacing,
+            paddingVertical: paneSpacing,
             justifyContent: 'space-between',
           }}
         >
-          <ChangaText type="paragraph">
-            Amber or something
-          </ChangaText>
-
+          <ChangaText type="paragraph">Amber or something</ChangaText>
           <View style={{ alignItems: 'center' }}>
             <ThemedButton
               preset="lightBlue"
-              style={{ width: 375 }}
+              style={{ width: wikiButtonWidth }}
               title="Check out Amber's Wiki"
             />
           </View>
         </Pane>
-
-
       </View>
     </View>
   )
