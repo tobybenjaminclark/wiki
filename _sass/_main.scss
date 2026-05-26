@@ -7,7 +7,7 @@
 }
 
 body {
-	font-family: system-ui, sans-serif;
+	font-family: 'Latin Modern Roman', 'Computer Modern Serif', serif;
 	-webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 	line-height:1.5;
@@ -107,7 +107,7 @@ blockquote {
 h1,h2,h3,h4,h5 {
 	line-height: 1;
 	margin: 1rem 0;
-	font-weight: 600;
+	font-weight: bold;
 }
 
 section h1:first-child {
