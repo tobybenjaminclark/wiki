@@ -8,6 +8,7 @@ author:
   name: Toby Clark
 
 markdown: kramdown
+future: true
 
 exclude:
   - .jekyll-cache
