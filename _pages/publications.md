@@ -11,12 +11,12 @@ Publications and longer-form work.
       <li>
         <a class="publication-title" href="{{ entry.url | relative_url }}">{{ entry.title }}.</a>
         <span class="publication-venue">
-          {% assign publisher_url = entry.publisher_url | default: "" | strip %}
-          {% if publisher_url != "" %}
-            <a href="{{ publisher_url }}">{{ entry.publisher }} {{ entry.date | date: "%Y" }}</a>
-          {% else %}
-            {{ entry.publisher }} {{ entry.date | date: "%Y" }}
-          {% endif %}
+          {%- assign publisher_url = entry.publisher_url | default: "" | strip -%}
+          {%- if publisher_url != "" -%}
+            (<a href="{{ publisher_url }}">{{ entry.publisher }} {{ entry.date | date: "%Y" }}</a>)
+          {%- else -%}
+            ({{ entry.publisher }} {{ entry.date | date: "%Y" }})
+          {%- endif -%}
         </span>
       </li>
     {% endfor %}
