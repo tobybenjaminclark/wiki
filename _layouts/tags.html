@@ -1,0 +1,16 @@
+---
+layout: default
+title: Tags
+---
+
+<section class="posts">
+	<h1>{{ page.title }}</h1>
+{% assign tags = site.tags | sort %}
+<ul>
+{% for tag in tags %}
+ {% assign tag_slug = tag | first | slugify %}
+ <li><a href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}">{{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})</a></li>
+{% endfor %}
+</ul>
+
+</section>

@@ -1,0 +1,10 @@
+<header class="no-print">
+  <nav aria-label="Main navigation">
+    <ul>
+      {% for item in site.data.navigation.links %}
+        {% assign destination = item.url | relative_url %}
+        <li><a href="{{ destination }}"{% if item.url == page.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,17 @@
+---
+layout: default
+title: Projects
+---
+
+<section class="posts">
+  <h1>Projects</h1>
+  {% if site.posts.size > 0 %}
+    <ul>
+      {% for post in site.posts %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y" }}</time></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Project write-ups will appear here.</p>
+  {% endif %}
+</section>
