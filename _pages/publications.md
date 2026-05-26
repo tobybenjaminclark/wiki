@@ -14,9 +14,9 @@ Publications and longer-form work.
         <span class="publication-venue">
           {%- capture venue_text -%}{{ entry.publisher }} {{ entry.date | date: "%Y" }}{%- endcapture -%}
           {%- if publisher_url != "" -%}
-            <a href="{{ publisher_url }}">({{ venue_text }})</a>
+            (<a href="{{ publisher_url }}">{{ venue_text }}</a>)
           {%- else -%}
-            ({{ venue_text }})
+            <span class="publication-venue-unpublished">{{ venue_text }}</span>
           {%- endif -%}
         </span>
       </li>
