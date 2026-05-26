@@ -11,8 +11,8 @@ body {
     text-rendering: optimizeLegibility;
 	line-height:1.5;
 	font-size: 1rem;
-	background-color: #FAF6EF;
-	color: rgb(22, 23, 26);
+	background-color: #FDFBF9;
+	color: #10263B;
 }
 
 nav ul {
@@ -20,9 +20,13 @@ nav ul {
 }
 
 a {
-    color: #10263B;
+    color: #B91C2E;
+	font-family:'Latin Modern Mono', 'Computer Modern Typewriter', monospace;
     text-decoration-skip-ink: auto;
     text-decoration: underline;
+	text-decoration-color:#B91C2E;
+	text-decoration-thickness:.04em;
+	text-underline-offset:.12em;
 }
 
 pre {
@@ -68,7 +72,7 @@ img {
 }
 
 hr {
-	background: #000;
+	background: #10263B;
     height: 1px;
     border: 0;
 }
@@ -94,7 +98,7 @@ header {
 
 .sidebar-profile p {
 	font-size:inherit;
-	font-weight:bold;
+	font-weight:normal;
 	margin-top:.5rem;
 	white-space:nowrap;
 }
@@ -103,10 +107,6 @@ header {
 	background:#10263B;
 	margin-top:1rem;
 	width:100%;
-}
-
-header a {
-	text-decoration: none;
 }
 
 header li {
@@ -125,8 +125,11 @@ header,section {
 
 blockquote {
 	font-style: italic;
-    border-left: 5px solid #ececec;
-    padding-left: 1rem;
+	background:#FAF6EF;
+	border-left:5px solid #10263B;
+	box-shadow:inset 5px 0 0 #B91C2E;
+	margin:.5rem 0;
+	padding:.75rem 1rem .75rem calc(1rem + 5px);
 }
 
 h1,h2,h3,h4,h5 {
@@ -174,7 +177,6 @@ strong, b {
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
-	text-decoration: none;
 }
 
 .posts li time, .projects li time {
@@ -217,15 +219,18 @@ main {
 }
 
 header li {
-    display: inline;
-	margin-right: 1rem;
+    display:block;
+	margin-right:0;
 }
 .logo {
 	padding-bottom: 1rem;
 }
 header ul {
 	border-bottom: 1px solid #edf2f7;
-	padding-bottom: 2rem;	
+	display:flex;
+	flex-wrap:wrap;
+	gap:.5rem 1rem;
+	padding-bottom:2rem;
 }
 nav ul {
     border-right: 0px;
