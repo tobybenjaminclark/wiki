@@ -116,13 +116,13 @@ header {
 	white-space:nowrap;
 }
 
-.sidebar-profile hr {
+header::after {
 	background:rgba(0,0,0,.2);
-	height:100%;
-	margin:0;
+	content:"";
 	position:absolute;
 	right:0;
-	top:0;
+	top:1rem;
+	bottom:1rem;
 	width:5px;
 }
 
@@ -221,7 +221,7 @@ strong, b {
 .publication-list .publication-venue {
 	display:flex;
 	flex-shrink:0;
-	gap: .5rem;
+	gap:0;
 	white-space: nowrap;
 }
 
@@ -234,9 +234,12 @@ strong, b {
 	color:#B91C2E;
 	font-family:'Latin Modern Mono', 'Computer Modern Typewriter', monospace;
 	text-decoration:none;
+	text-decoration-line:none;
 }
 
 .publication-list .publication-venue a {
+	color:#B91C2E;
+	font-family:'Latin Modern Mono', 'Computer Modern Typewriter', monospace;
 	text-decoration: underline;
 	text-decoration-color:#B91C2E;
 	text-decoration-thickness:.04em;
@@ -258,6 +261,10 @@ main {
 
 @media screen and (max-width: 45rem ) {
 .sidebar-profile {
+	display:none;
+}
+
+header::after {
 	display:none;
 }
 
