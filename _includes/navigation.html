@@ -3,7 +3,15 @@
     <ul>
       {% for item in site.data.navigation.links %}
         {% assign destination = item.url | relative_url %}
-        <li><a href="{{ destination }}"{% if item.url == page.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% assign item_active = false %}
+        {% if item.url == page.url %}
+          {% assign item_active = true %}
+        {% elsif item.url == '/oddments/' and page.collection == 'oddments' %}
+          {% assign item_active = true %}
+        {% elsif item.url == '/publications/' and page.collection == 'publications' %}
+          {% assign item_active = true %}
+        {% endif %}
+        <li><a href="{{ destination }}"{% if item_active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>

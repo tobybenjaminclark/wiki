@@ -17,21 +17,21 @@ title: Search
   }
 </style>
 
-<input type="text" id="search-input" placeholder="Search projects...">
+<input type="text" id="search-input" placeholder="Search writing...">
 <ol id="results-container"></ol>
 
 <script>
   const searchInput = document.getElementById('search-input');
   const resultsContainer = document.getElementById('results-container');
-  let projects = [];
+  let entries = [];
 
   function renderResults() {
     const query = searchInput.value.trim().toLowerCase();
     resultsContainer.replaceChildren();
     if (!query) return;
 
-    const matches = projects.filter((project) =>
-      [project.title, project.description, project.tags]
+    const matches = entries.filter((entry) =>
+      [entry.title, entry.description, entry.tags]
         .join(' ')
         .toLowerCase()
         .includes(query)
@@ -42,12 +42,12 @@ title: Search
       return;
     }
 
-    matches.slice(0, 10).forEach((project) => {
+    matches.slice(0, 10).forEach((entry) => {
       const item = document.createElement('li');
       const link = document.createElement('a');
-      link.href = project.url;
-      link.title = project.description;
-      link.textContent = project.title;
+      link.href = entry.url;
+      link.title = entry.description;
+      link.textContent = entry.title;
       item.appendChild(link);
       resultsContainer.appendChild(item);
     });
@@ -56,7 +56,7 @@ title: Search
   fetch('{{ "/search.json" | relative_url }}')
     .then((response) => response.json())
     .then((data) => {
-      projects = data;
+      entries = data;
       renderResults();
     });
 

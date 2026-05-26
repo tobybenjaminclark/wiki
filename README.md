@@ -2,20 +2,13 @@
 
 A Jekyll site using the [Sidey](https://github.com/ronv/sidey) theme structure, configured for deployment to GitHub Pages with GitHub Actions.
 
-## Write A Project
+## Write An Entry
 
-Projects are Markdown posts. To publish one:
-
-1. Copy `_drafts/project-template.md` into `_posts/`.
-2. Rename it in the form `YYYY-MM-DD-project-name.md`.
-3. Edit the title, description, tags, and Markdown body.
-4. Commit and push to `main`; the Pages workflow builds and deploys it.
-
-For example, a post named `_posts/2026-05-26-example-project.md` is displayed on the Projects page and given its own URL.
+Oddments are Markdown files in `_oddments/`; publications are Markdown files in `_publications/`. Copy one of the template entries in the relevant directory, give it a new filename, then edit its front matter and body. Each entry is displayed on its section page and given its own URL.
 
 ## Pages
 
-Edit the Markdown files in `_pages/` to change Introduction, Oddments, Publications, or Search.
+Edit `index.html` to change Introduction. Edit `_pages/oddments.md`, `_pages/publications.md`, or `_pages/search.md` to change their listing-page copy.
 
 ## Deployment
 

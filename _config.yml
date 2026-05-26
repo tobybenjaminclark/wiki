@@ -1,5 +1,5 @@
 title: Toby Clark
-description: Projects, publications, and assorted notes by Toby Clark.
+description: Publications and assorted notes by Toby Clark.
 url: "https://tobybenjaminclark.github.io"
 baseurl: "/wiki"
 permalink: pretty
@@ -32,6 +32,12 @@ collections:
   pages:
     output: true
     permalink: /:name/
+  oddments:
+    output: true
+    permalink: /oddments/:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
 
 defaults:
   - scope:
@@ -48,3 +54,13 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: oddments
+    values:
+      layout: entry
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: entry

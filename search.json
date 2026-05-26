@@ -2,7 +2,8 @@
 layout: null
 ---
 [
-  {% for post in site.posts %}
+  {% assign searchable_entries = site.oddments | concat: site.publications %}
+  {% for post in searchable_entries %}
     {
       "title": {{ post.title | jsonify }},
       "description": {{ post.description | default: post.excerpt | strip_html | strip_newlines | jsonify }},

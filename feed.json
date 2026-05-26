@@ -9,7 +9,8 @@ layout: null
   "description": {{ site.description | jsonify }},
   "authors": [{ "name": {{ site.author.name | jsonify }} }],
   "items": [
-    {% for post in site.posts %}
+    {% assign entries = site.oddments | concat: site.publications | sort: "date" | reverse %}
+    {% for post in entries %}
     {
       "id": {{ post.url | absolute_url | jsonify }},
       "url": {{ post.url | absolute_url | jsonify }},
