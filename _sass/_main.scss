@@ -139,12 +139,22 @@ header,section {
 }
 
 blockquote {
+	position: relative;
 	font-style: italic;
-	background:rgba(0, 0, 0, .05);
-	border-left:3px solid #10263B;
-	box-shadow:inset 3px 0 0 #B91C2E;
-	margin:.5rem 0;
-	padding:.5rem .75rem .5rem calc(.75rem + 3px);
+	background: rgba(16, 38, 59, 0.06);
+	border-left: 4px solid #10263B;
+	margin: .75rem 0;
+	padding: .65rem .9rem .65rem 1.1rem;
+}
+
+blockquote::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 4px;
+	width: 3px;
+	background: #B91C2E;
 }
 
 h1,h2,h3,h4,h5 {
