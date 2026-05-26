@@ -1,7 +1,7 @@
 ---
-title: Oddment One
-date: 2026-05-26
-description: A placeholder for a short note, experiment, or curiosity.
+title: Jazzhands Game
+date: 2023-11-04
+description: Gesture controlled game.
 ---
 
 This is a space for something small but worth keeping: an observation, a half-built experiment, a useful fragment, or a thought that might grow later.
