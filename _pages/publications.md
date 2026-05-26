@@ -11,8 +11,9 @@ Publications and longer-form work.
       <li>
         <a class="publication-title" href="{{ entry.url | relative_url }}">{{ entry.title }}.</a>
         <span class="publication-venue">
-          {% if entry.publisher_url %}
-            <a href="{{ entry.publisher_url }}">{{ entry.publisher }} {{ entry.date | date: "%Y" }}</a>
+          {% assign publisher_url = entry.publisher_url | default: "" | strip %}
+          {% if publisher_url != "" %}
+            <a href="{{ publisher_url }}">{{ entry.publisher }} {{ entry.date | date: "%Y" }}</a>
           {% else %}
             {{ entry.publisher }} {{ entry.date | date: "%Y" }}
           {% endif %}
