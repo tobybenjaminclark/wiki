@@ -1,5 +1,5 @@
 ---
-title: Publication Two
+title: Syntax-Guided Pruning Rule Synthesis for Single Machine Scheduling
 date: 2025-05-25
 publisher: Another Publisher
 publisher_url: https://example.com/another-publisher
