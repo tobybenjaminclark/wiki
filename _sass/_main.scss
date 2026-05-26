@@ -16,7 +16,7 @@ body {
 }
 
 nav ul {
-    border-right: 1px solid #edf2f7;
+    border-right: 0;
 }
 
 a {
@@ -93,13 +93,14 @@ header {
 }
 
 .sidebar-profile p {
-	font-size:1.1rem;
+	font-size:inherit;
+	font-weight:bold;
 	margin-top:.5rem;
 	white-space:nowrap;
 }
 
 .sidebar-profile hr {
-	background:#d9d2c7;
+	background:#10263B;
 	margin-top:1rem;
 	width:100%;
 }
