@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="post">
+<section class="post{% if page.collection == 'publications' %} publication-entry{% endif %}">
   <h2>{{ page.title }}</h2>
   {{ content }}
   {% if page.collection != "publications" and page.date %}

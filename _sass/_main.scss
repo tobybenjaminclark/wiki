@@ -79,6 +79,31 @@ header {
 	position:relative;
 }
 
+.sidebar-profile {
+	align-items:flex-end;
+	display:flex;
+	flex-direction:column;
+	margin:0 2rem 1.25rem 0;
+}
+
+.sidebar-profile img {
+	height:4.5rem;
+	object-fit:cover;
+	width:4.5rem;
+}
+
+.sidebar-profile p {
+	font-size:1.1rem;
+	margin-top:.5rem;
+	white-space:nowrap;
+}
+
+.sidebar-profile hr {
+	background:#d9d2c7;
+	margin-top:1rem;
+	width:100%;
+}
+
 header a {
 	text-decoration: none;
 }
@@ -107,6 +132,10 @@ h1,h2,h3,h4,h5 {
 	line-height: 1;
 	margin: 1rem 0;
 	font-weight: bold;
+}
+
+.publication-entry h2:first-child {
+	line-height:1.18;
 }
 
 section h1:first-child {
@@ -182,6 +211,10 @@ main {
 
 
 @media screen and (max-width: 45rem ) {
+.sidebar-profile {
+	display:none;
+}
+
 header li {
     display: inline;
 	margin-right: 1rem;
