@@ -3,7 +3,7 @@ layout: page
 title: Introduction
 ---
 
-Hello, I am Toby Clark, a doctoral researcher at the [University of Nottingham](https://www.nottingham.ac.uk/), based in the [Computational Optimisation and Learning Lab](https://www.nottingham.ac.uk/research/groups/col/).
+Hello, I am Toby Benjamin Clark, a doctoral researcher at the [University of Nottingham](https://www.nottingham.ac.uk/), based in the [Computational Optimisation and Learning Lab](https://www.nottingham.ac.uk/research/groups/col/).
 
 My research sits at the intersection of combinatorial optimisation and formal methods. Currently, I am interested in the use of [Satisfiability Modulo Theories](https://en.wikipedia.org/wiki/Satisfiability_modulo_theories) for the synthesis and verification of provably-correct pruning rules in machine sequencing problems.
 
