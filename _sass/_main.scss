@@ -219,9 +219,7 @@ strong, b {
 }
 
 .publication-list .publication-venue {
-	display:flex;
-	flex-shrink:0;
-	gap:0;
+	display:inline;
 	white-space: nowrap;
 }
 
