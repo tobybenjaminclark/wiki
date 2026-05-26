@@ -92,7 +92,9 @@ header {
 	align-items:flex-end;
 	display:flex;
 	flex-direction:column;
-	margin:0 2rem 1.25rem 0;
+	margin:0 0 1.25rem 0;
+	padding-right:1rem;
+	position:relative;
 }
 
 .sidebar-profile img {
@@ -115,9 +117,13 @@ header {
 }
 
 .sidebar-profile hr {
-	background:#10263B;
-	margin-top:1rem;
-	width:100%;
+	background:rgba(0,0,0,.2);
+	height:100%;
+	margin:0;
+	position:absolute;
+	right:0;
+	top:0;
+	width:5px;
 }
 
 header li {
@@ -224,8 +230,17 @@ strong, b {
 	font-style:italic;
 }
 
+.publication-list .publication-venue-published {
+	color:#B91C2E;
+	font-family:'Latin Modern Mono', 'Computer Modern Typewriter', monospace;
+	text-decoration:none;
+}
+
 .publication-list .publication-venue a {
 	text-decoration: underline;
+	text-decoration-color:#B91C2E;
+	text-decoration-thickness:.04em;
+	text-underline-offset:.12em;
 }
 
 .post ul, .project ul, .post ol  {
