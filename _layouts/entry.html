@@ -7,12 +7,11 @@ layout: default
   {{ content }}
   {% if page.collection == "publications" %}
     <span class="meta">
-      {% if page.conference_url %}
-        <a href="{{ page.conference_url }}">{{ page.conference }}</a>
+      {% if page.publisher_url %}
+        <a href="{{ page.publisher_url }}">{{ page.publisher }} {{ page.date | date: "%Y" }}</a>
       {% else %}
-        {{ page.conference }}
+        {{ page.publisher }} {{ page.date | date: "%Y" }}
       {% endif %}
-      &middot; <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y" }}</time>
     </span>
   {% elsif page.date %}
     <span class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>

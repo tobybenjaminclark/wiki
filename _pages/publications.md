@@ -11,12 +11,11 @@ Publications and longer-form work.
       <li>
         <a class="publication-title" href="{{ entry.url | relative_url }}">{{ entry.title }}.</a>
         <span class="publication-venue">
-          {% if entry.conference_url %}
-            <a href="{{ entry.conference_url }}">{{ entry.conference }}</a>
+          {% if entry.publisher_url %}
+            <a href="{{ entry.publisher_url }}">{{ entry.publisher }} {{ entry.date | date: "%Y" }}</a>
           {% else %}
-            {{ entry.conference }}
+            {{ entry.publisher }} {{ entry.date | date: "%Y" }}
           {% endif %}
-          <time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: "%Y" }}</time>
         </span>
       </li>
     {% endfor %}

@@ -1,8 +1,8 @@
 ---
 title: Publication One
 date: 2026-05-26
-conference: Conference Name
-conference_url: https://example.com/conference
+publisher: PATAT
+publisher_url: https://example.com/patat
 description: A placeholder for a published article, paper, essay, or long-form piece.
 ---
 
@@ -10,7 +10,7 @@ Use this page for a publication: include a short abstract, context for the work,
 
 ## Citation
 
-Toby Clark. *Publication One*. Conference Name, 2026.
+Toby Clark. *Publication One*. PATAT, 2026.
 
 ## Links
 
