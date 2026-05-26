@@ -3,7 +3,7 @@ layout: page
 title: Introduction
 ---
 
-Hello, I am a doctoral researcher at the [University of Nottingham](https://www.nottingham.ac.uk/), based in the [Computational Optimisation and Learning Lab](https://www.nottingham.ac.uk/research/groups/col/).
+Hello, I am Toby Clark, a doctoral researcher at the [University of Nottingham](https://www.nottingham.ac.uk/), based in the [Computational Optimisation and Learning Lab](https://www.nottingham.ac.uk/research/groups/col/).
 
 My work sits at the intersection of exact optimisation, formal methods and applied logic. Outside of academia, I have worked as both a consultant and software engineer, focusing on the integration of mathematical programming into real world decision systems.
 
