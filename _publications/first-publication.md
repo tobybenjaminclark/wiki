@@ -1,8 +1,8 @@
 ---
-title: Publication One
-date: 2026-05-26
+title: Automated Verification of Pruning Rules for Runway Sequencing
+date: 2026-08-01
 publisher: PATAT
-publisher_url: https://example.com/patat
+publisher_url: https://patatconference.org/patat2026/
 description: A placeholder for a published article, paper, essay, or long-form piece.
 ---
 
