@@ -31,7 +31,7 @@ title: Search
     if (!query) return;
 
     const matches = entries.filter((entry) =>
-      [entry.title, entry.description, entry.tags]
+      [entry.title, entry.description, entry.conference, entry.tags]
         .join(' ')
         .toLowerCase()
         .includes(query)

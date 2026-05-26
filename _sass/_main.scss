@@ -154,6 +154,25 @@ strong, b {
 	font-variant-numeric: tabular-nums;
 }
 
+.publication-list .publication-title {
+	margin-right: 1rem;
+}
+
+.publication-list .publication-venue {
+	display:flex;
+	flex-shrink:0;
+	gap: .5rem;
+	white-space: nowrap;
+}
+
+.publication-list .publication-venue a {
+	text-decoration: underline;
+}
+
+.publication-list .publication-venue time {
+	padding-left: 0;
+}
+
 .post ul, .project ul, .post ol  {
 	//list-style-position: inside;
 }
@@ -181,6 +200,16 @@ header ul {
 }
 nav ul {
     border-right: 0px;
+}
+
+.publication-list li {
+	align-items:flex-start;
+	flex-direction:column;
+	margin-bottom:1rem;
+}
+
+.publication-list .publication-venue {
+	font-size:.95rem;
 }
 
 .photos ul {

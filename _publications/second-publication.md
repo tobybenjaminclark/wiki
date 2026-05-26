@@ -1,6 +1,8 @@
 ---
-title: Publication Title Two
-date: 2026-05-25
+title: Publication Two
+date: 2025-05-25
+conference: Another Conference
+conference_url: https://example.com/another-conference
 description: A second placeholder for published or presented work.
 ---
 
@@ -8,7 +10,7 @@ This is a second publication template. Replace this introduction with a summary 
 
 ## Citation
 
-Toby Clark. *Publication Title Two*. Publication or venue, year.
+Toby Clark. *Publication Two*. Another Conference, 2025.
 
 ## Links
 

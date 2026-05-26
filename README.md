@@ -6,6 +6,8 @@ A Jekyll site using the [Sidey](https://github.com/ronv/sidey) theme structure, 
 
 Oddments are Markdown files in `_oddments/`; publications are Markdown files in `_publications/`. Copy one of the template entries in the relevant directory, give it a new filename, then edit its front matter and body. Each entry is displayed on its section page and given its own URL.
 
+For publications, `date` is the conference date used for ordering, while `conference` and `conference_url` provide the linked venue shown beside the title.
+
 ## Pages
 
 Edit `index.html` to change Introduction. Edit `_pages/oddments.md`, `_pages/publications.md`, or `_pages/search.md` to change their listing-page copy.

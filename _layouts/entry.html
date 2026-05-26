@@ -5,7 +5,16 @@ layout: default
 <section class="post">
   <h2>{{ page.title }}</h2>
   {{ content }}
-  {% if page.date %}
+  {% if page.collection == "publications" %}
+    <span class="meta">
+      {% if page.conference_url %}
+        <a href="{{ page.conference_url }}">{{ page.conference }}</a>
+      {% else %}
+        {{ page.conference }}
+      {% endif %}
+      &middot; <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y" }}</time>
+    </span>
+  {% elsif page.date %}
     <span class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
   {% endif %}
 </section>
