@@ -11,7 +11,7 @@ description: A placeholder for a published article, paper, essay, or long-form p
 Runway sequencing is an NP-hard combinatorial optimisation problem concerned with determining an efficient ordering of aircraft subject to operational constraints. It is difficult to solve exactly, as the number of solutions grows factorially to the number of aircraft. It is also safety-critical; pairs of aircraft must maintain a minimum time separation, as they leave behind swirling [wake vorticies](https://en.wikipedia.org/wiki/Wake_turbulence).
 
 {:refdef: style="text-align: center;"}
-![Wake Vorticies]({{ site.baseimg }}/publications/assets/wake-vortex.png)
+![Wake Vorticies](assets/wake-vortex.png)
 {: refdef}
 
 Many exact approaches rely on pruning rules, which characterise regions of the search space provably dominated by another region. These allow algorithms to effectively 'ignore' entire subtrees. One example of a pruning rule is where two aircraft have an order on release times, if one is available before the other, then it is never worse to sequence the earlier aircraft first.
