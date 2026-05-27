@@ -1,5 +1,5 @@
 ---
-title: Dependent Types for Natural Language (Masters Thesis)
+title: Dependent Types for Natural Language
 date: 2025-05-11
 category: miscellaneous
 description: Natural Language Semantics can be encode, represented, and checked using Dependent Type Theory.
