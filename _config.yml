@@ -1,11 +1,11 @@
-title: Toby Clark
-description: Publications and assorted notes by Toby Clark.
+title: Toby Benjamin Clark
+description: Toby Benjamin Clark is a doctoral researcher at the University of Nottingham working on formal methods and combinatorial optimisation.
 url: "https://www.toby.wiki"
 baseurl: ""
 permalink: pretty
 
 author:
-  name: Toby Clark
+  name: Toby Benjamin Clark
 
 markdown: kramdown
 future: true

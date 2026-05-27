@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Introduction
+description: Toby Benjamin Clark is a doctoral researcher at the University of Nottingham working on formal methods and combinatorial optimisation.
 ---
 
 Hello, I am Toby Benjamin Clark, a doctoral researcher at the [University of Nottingham](https://www.nottingham.ac.uk/), based in the [Computational Optimisation and Learning Lab](https://www.nottingham.ac.uk/research/groups/col/).

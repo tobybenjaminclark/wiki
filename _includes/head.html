@@ -4,6 +4,29 @@
 
   {% seo title=false %}
 
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Toby Benjamin Clark",
+        "url": "{{ '/' | absolute_url }}",
+        "image": "{{ '/assets/me.png' | absolute_url }}",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Nottingham"
+        },
+        "sameAs": [
+          "https://github.com/tobybenjaminclark",
+          "https://www.hackster.io/tobybenjaminclark"
+        ]
+      }
+    }
+  </script>
+  {% endif %}
+
   <title>
     {% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}
     {% unless page.title %} - {{ site.description | escape }}{% endunless %}
