@@ -239,8 +239,17 @@ strong, b {
 	text-underline-offset:.12em;
 }
 
-.post ul, .project ul, .post ol  {
-	//list-style-position: inside;
+.post ol {
+	list-style-position:inside;
+	margin:1.5rem 0;
+}
+
+.post ol li {
+	margin:.5rem 0;
+}
+
+.post ol li::marker {
+	font-weight:bold;
 }
 
 main {
