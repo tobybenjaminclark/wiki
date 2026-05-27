@@ -7,7 +7,7 @@ description: Jazzhands is a gesture controlled, action-based rhythm game develop
 
 [Steam Page](https://store.steampowered.com/app/2701220/Jazzhands/) • [BBC World](https://www.bbc.co.uk/news/live/cgqy2dypdw0t?post=asset%3A81099280-9f40-49a9-99e2-8e49f94df069#post) • [Original Devpost](https://devpost.com/software/jazzhands)
 
-Jazzhands is a gesture controlled rhythm game that I co-developed with [Amber Swarbrick](https://www.amber.wiki/). The concept is simple, the player follows on-screen hand choreography whilst a song plays. We use a simple computer vision model to process the gesture in realtime, and process scoring.
+Jazzhands is a gesture controlled rhythm game that I co-developed with [Amber](https://www.amber.wiki/). The concept is simple, the player follows on-screen hand choreography whilst a song plays. We use a simple computer vision model to process the gesture in realtime, and process scoring.
 
 We prototyped the idea at [HackNotts84](https://hn84.devpost.com/), where we won overall 1st. Since then, the project has been showcased at research events, demonstrated to [Sir Andrew Witty](https://en.wikipedia.org/wiki/Andrew_Witty), showcased on [BBC World](https://www.bbc.co.uk/news/live/cgqy2dypdw0t?post=asset%3A81099280-9f40-49a9-99e2-8e49f94df069#post), and made an appearance at EGX London 2024 as part of the [Leftfield Exhibit](https://www.egx.net/london/en-gb/things-to-do/panels/panel-information.html?gtID=876544&panel-name=Jazzhands).
 
