@@ -8,7 +8,7 @@ description: We propose the use of Satisfiability Modulo Theories for the automa
 
 [Paper Download](https://raw.githubusercontent.com/tobybenjaminclark/rsp-smt/main/Automated%20Verification%20of%20Pruning%20Rules%20for%20Runway%20Sequencing.pdf) • [Github Repository](https://github.com/tobybenjaminclark/rsp-smt/tree/main)
 
-Runway sequencing is an NP-hard combinatorial optimisation problem concerned with determining an efficient ordering of aircraft subject to operational constraints. It is difficult to solve problem instances exactly, as the number of solutions grows factorially to the number of aircraft. For many airports, sequencing is a real-time, safety-critical timetabling problem; pairs of aircraft must maintain a minimum time separation, as they leave behind swirling [wake vortices](https://en.wikipedia.org/wiki/Wake_turbulence).
+Runway sequencing is an NP-hard combinatorial optimisation problem concerned with determining an efficient ordering of aircraft subject to operational constraints. It is difficult to solve problem instances exactly, as the number of solutions grows factorially to the number of aircraft. For many airports, sequencing is a real-time, safety-critical timetabling problem; pairs of aircraft must maintain a minimum time separation, as upon takeoff they leave behind swirling [wake vortices](https://en.wikipedia.org/wiki/Wake_turbulence).
 
 <figure class="wake-vortex-figure">
   <img src="{{ '/assets/wake-vortex.png' | relative_url }}" alt="Wake Vortices" width="240">
@@ -27,7 +27,7 @@ Our paper proposes the use of [Satisfiability Modulo Theories](https://en.wikipe
 SMT enables automated, symbolic reasoning over constraints in rich background theories, and has become a standard tool for the automated verification of programs. Our approach interprets pruning rule correctness as a logical invariant of the problem model, rather than a modification to the search procedure. Specifically, we use the [Z3 Theorem Prover](https://github.com/z3prover/z3) to verify the following attributes:
 
 1. Pruning Rules must never prune away a better solution, if both branches are equally optimal, then one may be pruned.
-2. Pruning Rules must be non-vacuous, meaning they must trigger in atleast one feasible configuration (this is an artefact of proof-by-unsatisfiability).
+2. Pruning Rules must be non-vacuous, meaning they must trigger in atleast one feasible configuration (this is to ensure rules are actually correct, and not just that their preconditions are unsatisfiable).
 
 This work is intended to form the basis of a future pruning rule synthesis methodology to automatically discover and prove new rules in other Single Machine Scheduling Problems.
 
