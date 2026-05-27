@@ -1,6 +1,7 @@
 ---
 title: Jazzhands Game
 date: 2023-11-04
+category: competitions
 description: Gesture controlled game.
 ---
 

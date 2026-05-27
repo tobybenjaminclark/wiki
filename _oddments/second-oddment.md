@@ -1,6 +1,7 @@
 ---
 title: Oddment Two
 date: 2026-05-25
+category: miscellaneous
 description: A second placeholder for informal notes and experiments.
 ---
 
