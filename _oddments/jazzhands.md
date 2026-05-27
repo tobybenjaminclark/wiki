@@ -2,7 +2,7 @@
 title: Jazzhands Game
 date: 2023-11-04
 category: competitions
-description: Jazzhands is a gesture controlled, action-based rhythm game developed at HackNotts84.
+description: Jazzhands is a gesture controlled, action-based rhythm game developed at HackNotts84, showcased at EGX 2024, and featured on the BBC.
 ---
 
 [Steam Page](https://store.steampowered.com/app/2701220/Jazzhands/) • [BBC World](https://www.bbc.co.uk/news/live/cgqy2dypdw0t?post=asset%3A81099280-9f40-49a9-99e2-8e49f94df069#post) • [Original Devpost](https://devpost.com/software/jazzhands)
