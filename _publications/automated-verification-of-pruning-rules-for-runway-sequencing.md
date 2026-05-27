@@ -3,7 +3,7 @@ title: Automated Verification of Pruning Rules for Runway Sequencing
 date: 2026-08-01
 publisher: PATAT
 publisher_url: https://patatconference.org/patat2026/
-description: A placeholder for a published article, paper, essay, or long-form piece.
+description: We propose the use of Satisfiability Modulo Theories for the automated verification of pruning rules for the Runway Sequencing Problem.
 ---
 
 [Paper Download](https://raw.githubusercontent.com/tobybenjaminclark/rsp-smt/main/Automated%20Verification%20of%20Pruning%20Rules%20for%20Runway%20Sequencing.pdf) • [Github Repository](https://github.com/tobybenjaminclark/rsp-smt/tree/main)
