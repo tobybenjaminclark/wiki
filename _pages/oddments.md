@@ -2,10 +2,9 @@
 title: Oddments
 ---
 
-Fragments, experiments, notes, and things worth keeping.
-
+Other things, competitions, projects, and oddbits.
 <section class="posts">
-  <h3>Competitions</h3>
+  <h5>Competitions</h5>
   <ul>
     {% assign entries = site.oddments | sort: "date" | reverse %}
     {% for entry in entries %}
@@ -15,7 +14,7 @@ Fragments, experiments, notes, and things worth keeping.
     {% endfor %}
   </ul>
 
-  <h3>Miscellaneous</h3>
+  <h5>Miscellaneous</h5>
   <ul>
     {% for entry in entries %}
       {% unless entry.category == "competitions" %}
