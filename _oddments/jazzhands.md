@@ -21,7 +21,3 @@ I think that whilst the original version was unpolished, it had some charm and w
   <img src="{{ '/assets/jazzhands-original.png' | relative_url }}" alt="Original Jazzhands Box" width="240">
   <figcaption>The original Jazzhands setup comprised of a laptop wedged into a hand-painted, cardboard façade.</figcaption>
 </figure>
-
-![alt text](image.png)
-
-#### 
