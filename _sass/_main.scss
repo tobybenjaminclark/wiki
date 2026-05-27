@@ -314,6 +314,16 @@ figcaption {
     font-size: smaller;
 }
 
+.wake-vortex-figure {
+	padding:10px 0;
+	text-align:center;
+}
+
+.wake-vortex-figure figcaption {
+	margin:0 auto;
+	max-width:288px;
+}
+
 @media print
 {    
     .no-print, .no-print *
