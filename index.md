@@ -12,10 +12,10 @@ I am fully-funded by the [University of Nottingham](https://www.nottingham.ac.uk
 
 ---
 
-I completed my undergraduate studies at the [University of Nottingham](https://www.nottingham.ac.uk/), where I graduated top of my cohort in Computer Science. My bachelors thesis was supervised by [Dr Ulrik Buchholtz](https://ulrikbuchholtz.dk/) and my masters thesis by [Professor Thorsten Altenkirch](https://people.cs.nott.ac.uk/psztxa/).
+I completed my undergraduate studies at the [University of Nottingham](https://www.nottingham.ac.uk/), where I graduated top of my cohort in Computer Science. My bachelor's thesis was supervised by [Dr Ulrik Buchholtz](https://ulrikbuchholtz.dk/) and my master's thesis by [Professor Thorsten Altenkirch](https://people.cs.nott.ac.uk/psztxa/). Before starting university, I attended [The Billericay School](https://www.billericayschool.com/) near my hometown of [Basildon, Essex](https://en.wikipedia.org/wiki/Basildon).
 
 Outside of academia, I have experience as both an industry consultant and software engineer, focusing on the application of mathematical programming into real-world systems, including energy optimisation, electric vehicle routing, and biodiversity credit trading.
 
-In my spare time, I regularly compete in competitions, hackathons and pursue independent projects, some of which are collected in [Oddments](https://www.toby.wiki/oddments/). These give me opportunities to explore topical areas of computer science; infact, many of these projects have won awards, and one was even featured on [BBC World](https://www.bbc.co.uk/news/live/cgqy2dypdw0t?post=asset%3A81099280-9f40-49a9-99e2-8e49f94df069#post).
+In my spare time, I regularly compete in competitions, hackathons and pursue independent projects, some of which are collected in [Oddments](https://www.toby.wiki/oddments/). These give me opportunities to explore topical areas of computer science; in fact, many of these projects have won awards, and one was even featured on [BBC World](https://www.bbc.co.uk/news/live/cgqy2dypdw0t?post=asset%3A81099280-9f40-49a9-99e2-8e49f94df069#post).
 
 If you would like to get in touch with me, please feel free to email me at toby.clark@nottingham.ac.uk. 
